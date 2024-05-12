@@ -6,21 +6,19 @@ body {
     font-family: Arial, sans-serif;
     overflow: hidden; /* Para evitar que el contenedor se desplace horizontalmente */
     background-image: url("https://i.pinimg.com/originals/b0/07/93/b007933e087db1271b69ac4c26a5b228.jpg"); /* Reemplaza 'tu_imagen.jpg' con la ruta de tu imagen */
-    background-size: cover; /* Para cubrir toda la ventana del navegador */
+   
 }
 .container {
     text-align: center;
-    margin-top: 50px;
-    width: 80%; /* Ancho del contenedor */
-    max-width: 600px; /* Ancho máximo del contenedor */
-    height: 80%; /* Altura del contenedor */
-    max-height: 600px; /* Altura máxima del contenedor */
     position: absolute;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
+    max-width: 600px; 
+    width: 80%;
+ 
+    overflow: auto; 
     border-radius: 20px;
-    overflow: hidden; /* Oculta el contenido que se desborda */
     background: linear-gradient(to bottom right, #000000, #ffffff, #000000, #ffffff, #000000); /* Degradado de blanco a negro, movimiento diagonal de arriba izquierda a abajo derecha */
     background-size: 300% 300%; /* Tamaño del fondo para permitir la transición */
     animation: gradientMove 10s linear infinite; /* Aplica la animación al gradiente */
@@ -51,7 +49,29 @@ body {
     animation: burningAnimation 1s ease-in-out infinite alternate;
     text-shadow: 0 0 30px #ff5722, 0 0 40px #ffeb3b, 0 0 50px #ff5722, 0 0 60px #ffeb3b, 0 0 70px #ff5722, 0 0 80px #ffeb3b, 0 0 90px #ff5722, 0 0 100px #ffeb3b, 0 0 150px #ff5722;
 }
+@media (max-width: 700px) {
+    .profile h1 {
+        font-size: 1.5em; /* Mantener el mismo tamaño de texto para pantallas menores a 700px */
+    }
+    .profile-image {
+        width: 100px;
+        height: 100px;
+        border-radius: 50%;
+        margin-bottom: 20px;
+        object-fit: cover; 
+        
+    }
 
+
+
+}
+
+@media (max-width: 480px) {
+    .profile h1 {
+        font-size: 1em; /* Reducir aún más el tamaño del texto para pantallas más pequeñas */
+    }
+
+}
 @keyframes burningAnimation {
     0% {
         opacity: 1;
